@@ -4,21 +4,13 @@ urbanization, and anthropogenic change in Colombia". It has to folders, a first 
 
 Information sources:
 
-1) All forced displacemte data came from Colombia's Unit for the Victims Assistance and Reparation
+1) All forced displacemte data came from Colombia's Unit for the Victims Assistance and Reparation (for more information consult https://www.unidadvictimas.gov.co/es/ruv/37385).
 
-https://www.unidadvictimas.gov.co/es/ruv/37385
+2) Nightlight Satellite oppen source information came from DMSP-OLS Nighttime Lights Time Series, wich we extracted and processed using Google Earth Engine and ArcGIS Desktop 10.6 (For more information consult https://ngdc.noaa.gov/eog/dmsp/downloadV4composites.html).
 
-2) Nightlight Satellite oppen source information came from DMSP-OLS Nighttime Lights Time Series, wich we extracted and processed using Google Earth Engine and ArcGIS Desktop 10.6. 
+3) Deforestation information came form Gobla Forest Wathc oppen source data-sets (for more information consult https://www.globalforestwatch.org/).
 
-https://ngdc.noaa.gov/eog/dmsp/downloadV4composites.html
-
-3) Deforestation information came form Gobla Forest Wathc oppen source data-sets
-
-https://www.globalforestwatch.org/
-
-4) Adional demographic data came from Colombia's National Administratie Department of Statistics (DANE)
-
-https://www.dane.gov.co/
+4) Adional demographic data came from Colombia's National Administratie Department of Statistics "DANE" (for more information consult https://www.dane.gov.co/)
 
 
 
