@@ -1,0 +1,55 @@
+
+// This java-script code corresponds to the first stage of our geographic analysis, with which we extracted satellite data from DMSP-OLS Nighttime Lights Time Series. For more information about this source of data, consult: https://ngdc.noaa.gov/eog/dmsp/downloadV4composites.html
+
+print("Hello Guibi");
+var Colombia = ee.FeatureCollection('ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw')
+  //.filter(ee.Filter.eq('Country', 'Colombia'));
+
+
+//Corte temporal superior (x)
+var imagen1 = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")   //con "ee.ImgaeCollection" selecionamos una librería de imagenes
+.filterDate('2011-01-01', '2013-01-01')
+ .select('avg_vis');
+var superior = imagen1.reduce(ee.Reducer.mean());
+
+//Corte temporal inferior (y)
+var imagen2 = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
+.filterDate('2007-01-01', '2008-01-01')
+ .select('avg_vis');
+var inferior = imagen2.reduce(ee.Reducer.mean());
+
+//Diferencia entre cortes (x - y)
+var diferencia = superior.subtract(inferior);
+
+
+//Visualización de Azules a Rojos
+var mapColor = {min: -1.0, max: 10, palette: ['1e47ea','53a3d6', '53d6cf' ,'53d694', 'ffffff','e1e896', 'e9f93b', 'e89a2e', 'e82e2e']};
+//Para solo aumento lumínico
+//var mapColor = {min: 2.5, max: 10, palette: ['0000000000 ','e89a2e', 'e82e2e']};
+
+
+//Map.setCenter(-4.1899, 72.5010, 10); 
+Map.addLayer (diferencia, mapColor);
+
+ Export.image.toDrive({
+  image: median,
+  description: 'General-Review1-ols-9296-10&14',
+  scale: 30,
+  region: japan,
+  maxPixels: 8813288590
+});
+
+
+
+
+Filter scripts...
+1. Cambios luminicos
+Crecimietno_Urbano
+Forest
+No accessible repositories. Click Refresh to check again.
+No accessible repositories. Click Refresh to check again.
+1. Cambios luminicos *
+
+Use print(...) to write to this console.
+Attention Python and JavaScript client library users!
+Earth Engine servers now require client library v0.1.215, released March 11. Please update to the latest Python or JavaScript version to avoid a break in service.
